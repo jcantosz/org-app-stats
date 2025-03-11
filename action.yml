@@ -32,4 +32,4 @@ outputs:
     description: 'Path to the app repos CSV file'
 runs:
   using: 'node20'
-  main: 'index.js'
+  main: 'dist/index.js'
