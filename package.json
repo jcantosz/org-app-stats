@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@octokit/rest": "^21.1.1",
+    "csv-parser": "^3.2.0",
+    "csv-writer": "^1.6.0",
+    "@actions/core": "^1.6.0"
+  },
+  "type": "module"
+}

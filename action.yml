@@ -1,0 +1,35 @@
+name: 'Project Count'
+description: 'A GitHub Action to run the project count script'
+inputs:
+  GITHUB_TOKEN:
+    description: 'GitHub token for authentication'
+    required: true
+  GITHUB_ORG:
+    description: 'GitHub organization name'
+    required: true
+  output_dir:
+    description: 'Directory to save the output CSV files'
+    required: false
+    default: 'csv_output'
+  per_repo_installations_csv:
+    description: 'Filename for the per repo installations CSV file'
+    required: false
+    default: 'per_repo_installations.csv'
+  repo_app_details_csv:
+    description: 'Filename for the repo app details CSV file'
+    required: false
+    default: 'repo_app_details.csv'
+  app_repos_csv:
+    description: 'Filename for the app repos CSV file'
+    required: false
+    default: 'app_repos.csv'
+outputs:
+  per_repo_installations_csv:
+    description: 'Path to the per repo installations CSV file'
+  repo_app_details_csv:
+    description: 'Path to the repo app details CSV file'
+  app_repos_csv:
+    description: 'Path to the app repos CSV file'
+runs:
+  using: 'node20'
+  main: 'index.js'
