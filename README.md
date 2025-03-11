@@ -9,9 +9,9 @@ Note: A Personal Access Token MUST be used. App tokens are not able to view data
 - `GITHUB_TOKEN`: GitHub token for authentication (required)
 - `GITHUB_ORG`: GitHub organization name (required)
 - `OUTPUT_DIR`: Directory to save the output CSV files (default: `csv_output`)
-- `PER_REPO_INSTALLATIONS_CSV`: Filename for the per repo installations CSV file (default: `per_repo_installations.csv`)
-- `REPO_APP_DETAILS_CSV`: Filename for the repo app details CSV file (default: `repo_app_details.csv`)
-- `APP_REPOS_CSV`: Filename for the app repos CSV file (default: `app_repos.csv`)
+- `PER_REPO_INSTALLATIONS_CSV`: Filename for the per repo installations CSV file (default: `per-repo-installations.csv`)
+- `REPO_APP_DETAILS_CSV`: Filename for the repo app details CSV file (default: `repo-app-details.csv`)
+- `APP_REPOS_CSV`: Filename for the app repos CSV file (default: `app-repos.csv`)
 
 ## Outputs
 

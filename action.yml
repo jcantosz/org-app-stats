@@ -14,15 +14,15 @@ inputs:
   per_repo_installations_csv:
     description: 'Filename for the per repo installations CSV file'
     required: false
-    default: 'per_repo_installations.csv'
+    default: 'per-repo-installations.csv'
   repo_app_details_csv:
     description: 'Filename for the repo app details CSV file'
     required: false
-    default: 'repo_app_details.csv'
+    default: 'repo-app-details.csv'
   app_repos_csv:
     description: 'Filename for the app repos CSV file'
     required: false
-    default: 'app_repos.csv'
+    default: 'app-repos.csv'
 outputs:
   per_repo_installations_csv:
     description: 'Path to the per repo installations CSV file'
