@@ -32,10 +32,10 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Run Project Count
-      uses: ./.github/actions/project-count
+      uses: jcantosz/org-app-stats@main
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GITHUB_ORG: 'your_github_org'
