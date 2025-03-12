@@ -1,4 +1,3 @@
-import { Octokit } from '@octokit/rest';
 import { handleError } from './errorHandler.js';
 import core from '@actions/core';
 
@@ -29,14 +28,15 @@ export async function getOrgInstallations(config) {
  * @returns {Promise<Object>} - Raw installation data
  */
 async function fetchInstallationsData(config) {
-  const { data: installationsData } = await config.github.octokit.request('GET /orgs/{org}/installations', {
+  const installations = await config.github.octokit.paginate('GET /orgs/{org}/installations', {
     org: config.github.orgName,
     headers: {
       'X-GitHub-Api-Version': config.github.apiVersion
     }
   });
-  core.info(`Found ${installationsData.installations.length} total app installations for ${config.github.orgName}`);
-  return installationsData;
+  
+  core.info(`Found ${installations.length} total app installations for ${config.github.orgName}`);
+  return { installations };
 }
 
 /**
@@ -73,13 +73,13 @@ function categorizeInstallations(installationsData) {
  */
 export async function getInstallationRepositories(installationId, config) {
   return handleError(async () => {
-    const { data: reposData } = await config.github.octokit.request('GET /user/installations/{installation_id}/repositories', {
+    const repositories = await config.github.octokit.paginate('GET /user/installations/{installation_id}/repositories', {
       installation_id: installationId,
       headers: {
         'X-GitHub-Api-Version': config.github.apiVersion
       }
     });
     
-    return reposData.repositories.map(repo => repo.name);
+    return repositories.map(repo => repo.name);
   }, `Error fetching repositories for installation ${installationId}`);
 }
